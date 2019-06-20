@@ -1,6 +1,6 @@
 # Flutter Classified App Demo
 
-A sample application to show drag drop functionality in Flutter.
+A sample app to showcase classified app using flutter. 
 
 # Demo
 <img height="480px" width="270px" src="https://github.com/flutter-devs/flutter_classified_app/blob/master/screens/demo.gif">
