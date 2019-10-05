@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
-  String title;
+  final String title;
 
   CustomAppBar(this.title);
 
@@ -10,25 +10,29 @@ class CustomAppBar extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Container(
-      height: height/10,
+      height: height / 10,
       width: width,
       padding: EdgeInsets.only(left: 10, top: 25),
       decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors:[Colors.orange[200], Colors.pinkAccent],
-          )
-      ),
+        colors: [Colors.orange[200], Colors.pinkAccent],
+      )),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           IconButton(
               icon: Icon(Icons.arrow_back_ios),
-              onPressed: (){
+              onPressed: () {
                 print("pop");
                 Navigator.of(context).pop();
               }),
-          SizedBox(width: 10,),
-          Text('$title', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),)
+          SizedBox(
+            width: 10,
+          ),
+          Text(
+            '$title',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+          )
         ],
       ),
     );
