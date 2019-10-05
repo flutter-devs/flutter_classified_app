@@ -5,7 +5,6 @@ import 'package:flutter_classifiedappclone/Model/productModel.dart';
 import 'package:flutter_classifiedappclone/UI/Widgets/custom_shape.dart';
 import 'package:flutter_classifiedappclone/UI/Widgets/mainui_customcard.dart';
 
-
 class MainUI extends StatefulWidget {
   @override
   _MainUIState createState() => _MainUIState();
@@ -14,7 +13,6 @@ class MainUI extends StatefulWidget {
 class _MainUIState extends State<MainUI> {
   var scaffoldKey = GlobalKey<ScaffoldState>();
 
-
   bool isExpanded = false;
   List<Category> categoryItems;
   List<Product> trendingListItems;
@@ -22,6 +20,7 @@ class _MainUIState extends State<MainUI> {
   List<Product> dealsListItems;
   double _height;
   double _width;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -229,7 +228,11 @@ class _MainUIState extends State<MainUI> {
         onPressed: () {},
         backgroundColor: Colors.orange[200],
         icon: Icon(Icons.camera_alt),
-        label: Text("Post AD", textAlign: TextAlign.center,style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
+        label: Text(
+          "Post AD",
+          textAlign: TextAlign.center,
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: Container(
@@ -244,16 +247,14 @@ class _MainUIState extends State<MainUI> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text('Shop for',
-                        style: TextStyle(
-                             fontSize: 16)),
+                    Text('Shop for', style: TextStyle(fontSize: 16)),
                     GestureDetector(
                         onTap: _expand,
                         child: Text(
                           isExpanded ? "Show less" : "Show all",
                           style: TextStyle(
-                              color: Colors.orange[200],
-                              ),
+                            color: Colors.orange[200],
+                          ),
                         )),
                     //IconButton(icon: isExpanded? Icon(Icons.arrow_drop_up, color: Colors.orange[200],) : Icon(Icons.arrow_drop_down, color: Colors.orange[200],), onPressed: _expand)
                   ],
@@ -266,19 +267,17 @@ class _MainUIState extends State<MainUI> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text("Trending",
-                        style: TextStyle(
-                            fontSize: 16)),
+                    Text("Trending", style: TextStyle(fontSize: 16)),
                     GestureDetector(
                         onTap: () {
-                         // Navigator.of(context).pushNamed(TRENDING_UI);
+                          // Navigator.of(context).pushNamed(TRENDING_UI);
                           print('Showing all');
                         },
                         child: Text(
                           'Show all',
                           style: TextStyle(
-                              color: Colors.orange[300],
-                             ),
+                            color: Colors.orange[300],
+                          ),
                         ))
                   ],
                 ),
@@ -290,9 +289,7 @@ class _MainUIState extends State<MainUI> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text("Recommendations",
-                        style: TextStyle(
-                             fontSize: 16)),
+                    Text("Recommendations", style: TextStyle(fontSize: 16)),
                     GestureDetector(
                         onTap: () {
                           //Navigator.of(context).pushNamed(RECOMMEND_UI);
@@ -301,8 +298,8 @@ class _MainUIState extends State<MainUI> {
                         child: Text(
                           'Show all',
                           style: TextStyle(
-                              color: Colors.orange[300],
-                             ),
+                            color: Colors.orange[300],
+                          ),
                         ))
                   ],
                 ),
@@ -314,9 +311,7 @@ class _MainUIState extends State<MainUI> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text("Today's Deals",
-                        style: TextStyle(
-                             fontSize: 16)),
+                    Text("Today's Deals", style: TextStyle(fontSize: 16)),
                     GestureDetector(
                         onTap: () {
                           //Navigator.of(context).pushNamed(DEALS_UI);
@@ -325,8 +320,8 @@ class _MainUIState extends State<MainUI> {
                         child: Text(
                           'Show all',
                           style: TextStyle(
-                              color: Colors.orange[300],
-                              ),
+                            color: Colors.orange[300],
+                          ),
                         ))
                   ],
                 ),
@@ -364,7 +359,10 @@ class _MainUIState extends State<MainUI> {
                   backgroundColor: Colors.white,
                 ),
                 title: Text("FlutterDevs"),
-                subtitle: Text("flutterDevs@aeologic.com",style: TextStyle(fontSize: 13),),
+                subtitle: Text(
+                  "flutterDevs@aeologic.com",
+                  style: TextStyle(fontSize: 13),
+                ),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
                   color: Colors.black,
@@ -384,14 +382,12 @@ class _MainUIState extends State<MainUI> {
   Widget _bottomNavBar() {
     return BottomAppBar(
       notchMargin: 4,
-      shape: AutomaticNotchedShape(RoundedRectangleBorder(),RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
-      child:  Container(
+      shape: AutomaticNotchedShape(RoundedRectangleBorder(),
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
+      child: Container(
         margin: EdgeInsets.only(left: 50, right: 50),
         decoration: BoxDecoration(
-
-            shape: BoxShape.rectangle,
-            borderRadius: BorderRadius.circular(30)
-        ),
+            shape: BoxShape.rectangle, borderRadius: BorderRadius.circular(30)),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -400,7 +396,6 @@ class _MainUIState extends State<MainUI> {
               icon: Icon(Icons.home),
               onPressed: () {},
             ),
-
             IconButton(
               icon: Icon(Icons.message),
               onPressed: () {},
@@ -468,7 +463,7 @@ class _MainUIState extends State<MainUI> {
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.all(10),
                   prefixIcon:
-                  Icon(Icons.search, color: Colors.orange[200], size: 30),
+                      Icon(Icons.search, color: Colors.orange[200], size: 30),
                   hintText: "What're you looking for?",
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30.0),
@@ -479,7 +474,7 @@ class _MainUIState extends State<MainUI> {
           ),
         ),
         Container(
-          //color: Colors.blue,
+            //color: Colors.blue,
             margin: EdgeInsets.only(left: 20, right: 20, top: _height / 20),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -502,7 +497,7 @@ class _MainUIState extends State<MainUI> {
                 Flexible(
                   child: Container(
                     height: _height / 20,
-                    padding: EdgeInsets.only(left: 10,right: 10),
+                    padding: EdgeInsets.only(left: 10, right: 10),
                     decoration: BoxDecoration(
                       color: Colors.black12,
                       shape: BoxShape.rectangle,
@@ -512,20 +507,23 @@ class _MainUIState extends State<MainUI> {
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         GestureDetector(
-                          onTap: (){
+                          onTap: () {
                             print('Editing location');
                           },
                           child: Icon(
                             Icons.edit_location,
                             color: Colors.white,
-                            size: _height/40,
+                            size: _height / 40,
                           ),
                         ),
-                        SizedBox(width: 10,),
+                        SizedBox(
+                          width: 10,
+                        ),
                         Flexible(
                             child: Text('Noida',
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: _height/50),
+                                    color: Colors.white,
+                                    fontSize: _height / 50),
                                 // overflow: TextOverflow.fade,
                                 softWrap: false)),
                       ],
@@ -535,13 +533,15 @@ class _MainUIState extends State<MainUI> {
                 Opacity(
                   opacity: 0.5,
                   child: GestureDetector(
-                    onTap: (){},
-                      child: Icon(Icons.notifications, color: Colors.black,size: _height/30,)),
-                  ),
+                      onTap: () {},
+                      child: Icon(
+                        Icons.notifications,
+                        color: Colors.black,
+                        size: _height / 30,
+                      )),
+                ),
               ],
             )),
-
-
       ],
     );
   }
@@ -574,7 +574,7 @@ class _MainUIState extends State<MainUI> {
                 Flexible(
                   child: Text(
                     "Electronics",
-                    style: TextStyle( fontSize: 13),
+                    style: TextStyle(fontSize: 13),
                   ),
                 ),
               ],
@@ -651,7 +651,7 @@ class _MainUIState extends State<MainUI> {
             Column(
               children: <Widget>[
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     //Navigator.of(context).pushNamed(CARS_ITEM_LIST);
                     print('Routing to Cars item list');
                   },
@@ -667,7 +667,7 @@ class _MainUIState extends State<MainUI> {
                 Flexible(
                   child: Text(
                     "Cars",
-                    style: TextStyle( fontSize: 13),
+                    style: TextStyle(fontSize: 13),
                   ),
                 ),
               ],
@@ -675,7 +675,7 @@ class _MainUIState extends State<MainUI> {
             Column(
               children: <Widget>[
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     //Navigator.of(context).pushNamed(BIKES_ITEM_LIST);
                     print('Routing to Bikes item list');
                   },
@@ -691,7 +691,7 @@ class _MainUIState extends State<MainUI> {
                 Flexible(
                   child: Text(
                     "Bikes",
-                    style: TextStyle( fontSize: 13),
+                    style: TextStyle(fontSize: 13),
                   ),
                 ),
               ],
@@ -714,7 +714,7 @@ class _MainUIState extends State<MainUI> {
                 Flexible(
                   child: Text(
                     "Mobiles",
-                    style: TextStyle( fontSize: 13),
+                    style: TextStyle(fontSize: 13),
                   ),
                 ),
               ],
@@ -722,7 +722,7 @@ class _MainUIState extends State<MainUI> {
             Column(
               children: <Widget>[
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     //Navigator.of(context).pushNamed(PETS_ITEM_LIST);
                     print('Routing to Pets item list');
                   },
@@ -815,7 +815,7 @@ class _MainUIState extends State<MainUI> {
                 Flexible(
                   child: Text(
                     "Jobs",
-                    style: TextStyle( fontSize: 13),
+                    style: TextStyle(fontSize: 13),
                   ),
                 ),
               ],
@@ -846,7 +846,7 @@ class _MainUIState extends State<MainUI> {
             Column(
               children: <Widget>[
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     //Navigator.of(context).pushNamed(CARS_ITEM_LIST);
                     print('Routing to Cars item list');
                   },
@@ -862,7 +862,7 @@ class _MainUIState extends State<MainUI> {
                 Flexible(
                   child: Text(
                     "Cars",
-                    style: TextStyle( fontSize: 13),
+                    style: TextStyle(fontSize: 13),
                   ),
                 ),
               ],
@@ -870,7 +870,7 @@ class _MainUIState extends State<MainUI> {
             Column(
               children: <Widget>[
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     //Navigator.of(context).pushNamed(BIKES_ITEM_LIST);
                     print('Routing to Bikes item list');
                   },
@@ -886,7 +886,7 @@ class _MainUIState extends State<MainUI> {
                 Flexible(
                   child: Text(
                     "Bikes",
-                    style: TextStyle( fontSize: 13),
+                    style: TextStyle(fontSize: 13),
                   ),
                 ),
               ],
@@ -909,7 +909,7 @@ class _MainUIState extends State<MainUI> {
                 Flexible(
                   child: Text(
                     "Mobiles",
-                    style: TextStyle( fontSize: 13),
+                    style: TextStyle(fontSize: 13),
                   ),
                 ),
               ],
@@ -917,7 +917,7 @@ class _MainUIState extends State<MainUI> {
             Column(
               children: <Widget>[
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     //Navigator.of(context).pushNamed(PETS_ITEM_LIST);
                     print('Routing to Pets item list');
                   },
@@ -941,7 +941,7 @@ class _MainUIState extends State<MainUI> {
             Column(
               children: <Widget>[
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     //Navigator.of(context).pushNamed(FASHION_ITEM_LIST);
                     print('Routing to Fashion item list');
                   },
@@ -957,7 +957,7 @@ class _MainUIState extends State<MainUI> {
                 Flexible(
                   child: Text(
                     "Fashion",
-                    style: TextStyle( fontSize: 13),
+                    style: TextStyle(fontSize: 13),
                   ),
                 ),
               ],
@@ -965,7 +965,7 @@ class _MainUIState extends State<MainUI> {
           ],
         ),
         crossFadeState:
-        isExpanded ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+            isExpanded ? CrossFadeState.showSecond : CrossFadeState.showFirst,
         duration: kThemeAnimationDuration,
       ),
     );
@@ -987,7 +987,8 @@ class _MainUIState extends State<MainUI> {
     );
   }
 
-  Widget _buildTrendingEntries(BuildContext context, int index, List<Product> listItem) {
+  Widget _buildTrendingEntries(
+      BuildContext context, int index, List<Product> listItem) {
     return GestureDetector(
       onTap: () {
         // Navigator.of(context).pushNamed(DETAIL_UI);
@@ -1022,7 +1023,8 @@ class _MainUIState extends State<MainUI> {
     );
   }
 
-  Widget _buildRecommendationsEntries(BuildContext context, int index, List<Product> listItem) {
+  Widget _buildRecommendationsEntries(
+      BuildContext context, int index, List<Product> listItem) {
     return GestureDetector(
       onTap: () {
         //Navigator.of(context).pushNamed(DETAIL_UI);
@@ -1056,7 +1058,8 @@ class _MainUIState extends State<MainUI> {
     );
   }
 
-  Widget _buildDealsEntries(BuildContext context, int index, List<Product> listItem) {
+  Widget _buildDealsEntries(
+      BuildContext context, int index, List<Product> listItem) {
     return GestureDetector(
       onTap: () {
         //Navigator.of(context).pushNamed(DETAIL_UI);
